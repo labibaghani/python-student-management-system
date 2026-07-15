@@ -76,6 +76,7 @@ while True:
 
             if len(students) == 0:
                 print("No students found.")
+                continue
                 
             search_roll = input("Enter Roll Number: ")
             found = False
@@ -92,6 +93,7 @@ while True:
             
             if len(students) == 0:
                 print("No students found.")
+                continue
 
             delete_roll = input("Enter Roll Number: ")
             found = False
