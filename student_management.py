@@ -31,11 +31,13 @@ while True:
 
     print("1. Add Student")
     print("2. View Students")
-    print("3. Exit")
+    print("3. Search Student")
+    print("4. Delete Student")
+    print("5. Exit")
 
     choice = input("Choose an option: ")
 
-    if choice in ["1","2","3"]:
+    if choice in ["1","2","3","4","5"]:
      
         if choice=="1":
          
@@ -69,14 +71,49 @@ while True:
             else:
                 for student in students:
                     student.display()
+
+        elif choice == "3":
+
+            if len(students) == 0:
+                print("No students found.")
+                
+            search_roll = input("Enter Roll Number: ")
+            found = False
+
+            for student in students:
+                if student.roll_no == search_roll:
+                    student.display()
+                    found = True
+                
+            if not found:
+                    print("Student not found.")
+            
+        elif choice == "4":
+            
+            if len(students) == 0:
+                print("No students found.")
+
+            delete_roll = input("Enter Roll Number: ")
+            found = False
+
+            for student in students:
+                if student.roll_no == delete_roll:
+                    students.remove(student)
+                    found = True
+                    print("Student Removed Successfully!")
+                    break
+            
+            if not found:
+                    print("Student not found.")
             
 
-        elif choice=="3":
+
+        elif choice=="5":
 
             print("Thank You!!")
             break
     
     else:
-        print("Invalid choice! Choose 1,2 or 3")
+        print("Invalid choice! Choose 1,2,3,4 or 5")
 
     
